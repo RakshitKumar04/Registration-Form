@@ -33,11 +33,20 @@
     <div class="row">
         <div class="col mb-3">
             <label for="dob" class="form-Labe1">Date of Birth</label>
-            <input type="date" class="form-control" id="dob" value="DD-MM-YYYY" min="01-01-0001" max="31-12-3030" formControlName="dob">
+            <input type="date" class="form-control" id="dob" value="DD-MM-YYYY" min="01-01-0001" max="31-12-3030"
+                formControlName="dob">
             <div class="form-text text-danger" *ngIf="DOB.errors?.['required'] && (DOB.touched || DOB.dirty)">
                 *DOB is Required.
             </div>
         </div>
+
+        <div class="col mb-3">
+            <label for="age" class="form-Labe1">Age</label>
+            <input type="text" class="form-control" id="age">
+        </div>
+    </div>
+
+    <div class="row">
         <div class="col ps-3 mb-3">
             <div class="m-1">Gender</div>
             <div class="form-check form-check-inline">
