@@ -1,0 +1,129 @@
+<form [formGroup]="registerForm" (ngSubmit)="registerSubmited()" class="border p-3 rounded-3">
+
+    <div class="row g-0">
+        <div class="col text-center p-2 mb-3 bg-light">
+            <span class="fs-3">Register</span>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col mb-3">
+            <label for="firstname" class="form-label">First name</label>
+            <input type="text" class="form-control" id="firstname" placeholder="First name" formControlName="firstname">
+            <div class="form-text text-danger"
+                *ngIf="FirstName.errors?.['required'] && (FirstName.touched || FirstName.dirty)">
+                *First Name is Required.
+            </div>
+            <div class="form-text text-danger" *ngIf="FirstName.errors?.['minlength']">
+                *First Name is too short.
+            </div>
+            <div class="form-text text-danger" *ngIf="FirstName.errors?.['maxlength']">
+                *First Name is too long.
+            </div>
+            <div class="form-text text-danger" *ngIf="FirstName.errors?.['pattern']">
+                *Invaid First Name.
+            </div>
+        </div>
+        <div class="col mb-3">
+            <label for="lastname" class="form-label">Last name</label>
+            <input type="text" class="form-control" id="lastname" placeholder="Last name" formControlName="lastname">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col mb-3">
+            <label for="dob" class="form-Labe1">Date of Birth</label>
+            <input type="text" class="form-control" id="dob" placeholder="DD-MM-YYYY" formControlName="dob">
+            <div class="form-text text-danger" *ngIf="DOB.errors?.['required'] && (DOB.touched || DOB.dirty)">
+                *DOB is Required.
+            </div>
+        </div>
+        <div class="col ps-3 mb-3">
+            <div class="m-1">Gender</div>
+            <div class="form-check form-check-inline">
+                <input type="radio" class="form-check-input" value="m" id="male" formControlName="gender">
+                <label class="form-check-label" for="male">Male</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input type="radio" class="form-check-ingut" value="f" id="female" formControlName="gender">
+                <label class="form-check-label" for="female">Female</label>
+            </div>
+            <div class="form-text text-danger" *ngIf="Gender.errors?.['required']">
+                *Select Gender.
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col mb-3">
+            <label for="address" class="form-label">Address</label>
+            <input type="address1" class="form-control" id="address1" placeholder="Address Line 1"
+                formControlName="address1">
+            <div class="form-text text-danger"
+                *ngIf="Address.errors?.['required'] && (Address.touched || Address.dirty)">
+                *Address is Required.
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col mb-3">
+            <input type="address2" class="form-control" id="address2" placeholder="Address Line 2"
+                formControlName="address2">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col mb-3">
+            <label for="pin" class="form-Labe1">PIN Code</label>
+            <input type="text" class="form-control" id="pin" formControlName="pin">
+            <div class="form-text text-danger" *ngIf="PIN.errors?.['required'] && (PIN.touched || PIN.dirty)">
+                *PIN is Required.
+            </div>
+            <div class="form-text text-danger" *ngIf="PIN.errors?.['minlength']">
+                *PIN is too short.
+            </div>
+            <div class="form-text text-danger" *ngIf="PIN.errors?.['maxlength']">
+                *PIN is too long.
+            </div>
+            <div class="form-text text-danger" *ngIf="PIN.errors?.['pattern']">
+                *Invaid PIN.
+            </div>
+        </div>
+        <div class="col ps-3 mb-3">
+            <label for="mobile" class="form-Labe1">Mobile Number</label>
+            <input type="text" class="form-control" id="mobile" formControlName="mobile">
+            <div class="form-text text-danger" *ngIf="Mobile.errors?.['required'] && (Mobile.touched || Mobile.dirty)">
+                *Mobile No. is Required.
+            </div>
+            <div class="form-text text-danger" *ngIf="Mobile.errors?.['minlength']">
+                *Mobile No. is too short.
+            </div>
+            <div class="form-text text-danger" *ngIf="Mobile.errors?.['maxlength']">
+                *Mobile No. is too long.
+            </div>
+            <div class="form-text text-danger" *ngIf="Mobile.errors?.['pattern']">
+                *Invaid Mobile No.
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col mb-3">
+            <label for="state" class="form-Labe1">State</label>
+            <input type="text" class="form-control" id="state" formControlName="state">
+        </div>
+        <div class="col ps-3 mb-3">
+            <label for="dist" class="form-Labe1">District</label>
+            <input type="text" class="form-control" id="dist" formControlName="dist">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6 offset-3">
+            <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </div>
+</form>
